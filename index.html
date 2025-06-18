@@ -1,306 +1,57 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Servicios APP - Plomería</title>
-<style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        font-family: sans-serif;
-        background-color: #f4f4f4;
-        padding-top: 60px;
-      }
-
-      header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background-color: #0077cc;
-        color: white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 20px;
-        z-index: 1000;
-      }
-
-      header h1 {
-        font-size: 20px;
-      }
-
-      header button {
-        background-color: white;
-        color: #0077cc;
-        border: none;
-        padding: 8px 12px;
-        border-radius: 4px;
-        font-weight: bold;
-        cursor: pointer;
-      }
-
-      .card {
-        background-color: white;
-        margin: 15px;
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      }
-
-      .card-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-      }
-
-      .info {
-        flex: 1;
-        margin-right: 10px;
-      }
-
-      .info h3 {
-        margin-bottom: 5px;
-      }
-
-      .info p {
-        font-size: 14px;
-        color: #333;
-        margin-bottom: 8px;
-      }
-
-      .buttons {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .info button.accordion-btn {
-        font-size: 14px;
-        color: #0077cc;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        text-decoration: underline;
-      }
-
-      .info button.photos-btn {
-        font-size: 12px;
-        background-color: #ccc;
-        border: none;
-        border-radius: 4px;
-        padding: 4px 8px;
-        margin-left: 10px;
-        cursor: pointer;
-      }
-
-      .photo {
-        width: 60px;
-        height: 60px;
-        background-color: #ccc;
-        border-radius: 8px;
-      }
-
-      .accordion {
-        display: none;
-        margin-top: 10px;
-        font-size: 14px;
-        color: #333;
-        line-height: 1.5;
-      }
-
-      .accordion.open {
-        display: block;
-      }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicios APP</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0077cc" />
+  <script>
+    // Redirección forzada si se abre desde una ruta mal cacheada
+    const pathname = location.pathname;
+    if (
+      pathname.includes("plomeria.html") ||
+      pathname.endsWith("/") ||
+      pathname === "/LaAppDeServicios/" ||
+      pathname === "/Servicios-App/" // por si quedó rastros del repo viejo
+    ) {
+      location.replace("index.html");
+    }
+  </script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+  </script>
 </head>
 <body>
-<header>
-<h1>Plomería</h1>
-<button>Buscar otro servicio</button>
-</header>
-<!-- Tarjetas de prestadores -->
-<div class="card">
-<div class="card-content">
-<div class="info">
-<h3>Juan Oliva</h3>
-<p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width: 16px; vertical-align: middle"/>
-            Tel: 3496 448539
-          </p>
-<div class="buttons">
-<button class="accordion-btn" onclick="toggleAccordion(this)">
-              + Info
-            </button>
-<button class="photos-btn">+ Fotos</button>
-</div>
-<div class="accordion">
-<p>Tipo de servicio: Reparaciones y Obras Grandes</p>
-<p>Horarios de atención: 8 a 18 hs</p>
-<p>Presupuestos desde: $3000</p>
-<p>Atención de urgencias 24 hrs: Sí</p>
-<p>Trabajos en localidades cercanas: Sí</p>
-</div>
-</div>
-<div class="photo"></div>
-</div>
-</div>
-<div class="card">
-<div class="card-content">
-<div class="info">
-<h3>María López</h3>
-<p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width: 16px; vertical-align: middle"/>
-            Tel: 3496 112233
-          </p>
-<div class="buttons">
-<button class="accordion-btn" onclick="toggleAccordion(this)">
-              + Info
-            </button>
-<button class="photos-btn">+ Fotos</button>
-</div>
-<div class="accordion">
-<p>Tipo de servicio: Solo Reparaciones</p>
-<p>Horarios de atención: 9 a 17 hs</p>
-<p>Presupuestos desde: $2500</p>
-<p>Atención de urgencias 24 hrs: No</p>
-<p>Trabajos en localidades cercanas: Sí</p>
-</div>
-</div>
-<div class="photo"></div>
-</div>
-</div>
-<div class="card">
-<div class="card-content">
-<div class="info">
-<h3>Carlos Méndez</h3>
-<p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width: 16px; vertical-align: middle"/>
-            Tel: 3496 223344
-          </p>
-<div class="buttons">
-<button class="accordion-btn" onclick="toggleAccordion(this)">
-              + Info
-            </button>
-<button class="photos-btn">+ Fotos</button>
-</div>
-<div class="accordion">
-<p>Tipo de servicio: Obras Grandes</p>
-<p>Horarios de atención: 7 a 15 hs</p>
-<p>Presupuestos desde: $5000</p>
-<p>Atención de urgencias 24 hrs: No</p>
-<p>Trabajos en localidades cercanas: No</p>
-</div>
-</div>
-<div class="photo"></div>
-</div>
-</div>
-<div class="card">
-<div class="card-content">
-<div class="info">
-<h3>Sofía Herrera</h3>
-<p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width: 16px; vertical-align: middle"/>
-            Tel: 3496 334455
-          </p>
-<div class="buttons">
-<button class="accordion-btn" onclick="toggleAccordion(this)">
-              + Info
-            </button>
-<button class="photos-btn">+ Fotos</button>
-</div>
-<div class="accordion">
-<p>Tipo de servicio: Reparaciones y Obras Grandes</p>
-<p>Horarios de atención: 10 a 19 hs</p>
-<p>Presupuestos desde: $4000</p>
-<p>Atención de urgencias 24 hrs: Sí</p>
-<p>Trabajos en localidades cercanas: Sí</p>
-</div>
-</div>
-<div class="photo"></div>
-</div>
-</div>
-<div class="card">
-<div class="card-content">
-<div class="info">
-<h3>Diego Ramírez</h3>
-<p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width: 16px; vertical-align: middle"/>
-            Tel: 3496 445566
-          </p>
-<div class="buttons">
-<button class="accordion-btn" onclick="toggleAccordion(this)">
-              + Info
-            </button>
-<button class="photos-btn">+ Fotos</button>
-</div>
-<div class="accordion">
-<p>Tipo de servicio: Solo Obras Grandes</p>
-<p>Horarios de atención: 6 a 14 hs</p>
-<p>Presupuestos desde: $5500</p>
-<p>Atención de urgencias 24 hrs: No</p>
-<p>Trabajos en localidades cercanas: Sí</p>
-</div>
-</div>
-<div class="photo"></div>
-</div>
-</div>
-<div class="card">
-<div class="card-content">
-<div class="info">
-<h3>Lucía Fernández</h3>
-<p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width: 16px; vertical-align: middle"/>
-            Tel: 3496 556677
-          </p>
-<div class="buttons">
-<button class="accordion-btn" onclick="toggleAccordion(this)">
-              + Info
-            </button>
-<button class="photos-btn">+ Fotos</button>
-</div>
-<div class="accordion">
-<p>Tipo de servicio: Reparaciones y Obras Grandes</p>
-<p>Horarios de atención: 8 a 16 hs</p>
-<p>Presupuestos desde: $3200</p>
-<p>Atención de urgencias 24 hrs: Sí</p>
-<p>Trabajos en localidades cercanas: No</p>
-</div>
-</div>
-<div class="photo"></div>
-</div>
-</div>
-<script>
-      function toggleAccordion(button) {
-        const accordion = button.parentElement.nextElementSibling;
-        accordion.classList.toggle("open");
-      }
-    </script>
-<button id="btn-instalar" style="display:none;position:fixed;bottom:20px;right:20px;padding:12px 18px;background:#0077cc;color:white;border:none;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.2);z-index:1000;">📲 Instalar aplicación</button><script>
-let deferredPrompt;
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  document.getElementById('btn-instalar').style.display = 'block';
-});
+  <header>
+    <h1>Servicios APP</h1>
+    <p>Accedé a prestadores locales fácilmente</p>
+  </header>
 
-document.getElementById('btn-instalar').addEventListener('click', () => {
-  if (deferredPrompt) {
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then((choiceResult) => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('PWA instalada');
-      }
-      deferredPrompt = null;
-    });
-  }
-});
-</script></body>
+  <main>
+    <input type="text" id="buscador" placeholder="Buscar servicio o nombre..." />
+
+    <div class="categorias">
+      <a href="plomeria.html">Plomería</a>
+      <a href="albanileria.html">Albañilería</a>
+      <a href="herreria.html">Herrería</a>
+      <a href="grua.html">Grúa</a>
+      <a href="containers.html">Containers para Residuos</a>
+      <a href="fletes.html">Fletes</a>
+      <a href="mini-fletes.html">Mini-Fletes</a>
+      <a href="comisiones.html">Comisiones</a>
+      <a href="pintura.html">Pintura</a>
+      <a href="carpinteria.html">Carpintería</a>
+      <a href="enfermeria.html">Enfermería</a>
+      <a href="veterinaria.html">Veterinaria</a>
+      <a href="reparacion-heladeras.html">Rep. Heladeras</a>
+      <a href="reparacion-lavarropas.html">Rep. Lavarropas</a>
+      <a href="aire-acondicionado.html">Aire Acondicionado</a>
+      <a href="costura.html">Costura</a>
+    </div>
+  </main>
+</body>
 </html>
