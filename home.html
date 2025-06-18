@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Servicios APP - Inicio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .main-container {
+        padding: 20px;
+      }
+
+      .search-bar {
+        display: flex;
+        margin-bottom: 20px;
+      }
+
+      .search-bar input {
+        flex: 1;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .categories {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+      }
+
+      .category {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        cursor: pointer;
+        font-weight: bold;
+        color: #0077cc;
+        transition: background-color 0.2s ease;
+      }
+
+      .category:hover {
+        background-color: #e6f0fa;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Servicios APP</h1>
+    </header>
+
+    <div class="main-container">
+      <div class="search-bar">
+        <input
+          type="text"
+          placeholder="Buscar por nombre o tipo de servicio..."
+          oninput="filterCategories(this.value)"
+        />
+      </div>
+
+      <div class="categories" id="category-list">
+        <div class="category" onclick="goToCategory('plomeria.html')">
+          Plomería
+        </div>
+        <div class="category" onclick="goToCategory('albanileria.html')">
+          Albañilería
+        </div>
+        <div class="category" onclick="goToCategory('herreria.html')">
+          Herrería
+        </div>
+        <div class="category" onclick="goToCategory('grua.html')">Grúa</div>
+        <div class="category" onclick="goToCategory('containers.html')">
+          Containers para Residuos
+        </div>
+        <div class="category" onclick="goToCategory('fletes.html')">Fletes</div>
+        <div class="category" onclick="goToCategory('mini-fletes.html')">
+          Mini-Fletes
+        </div>
+        <div class="category" onclick="goToCategory('comisiones.html')">
+          Comisiones
+        </div>
+        <div class="category" onclick="goToCategory('pintura.html')">
+          Pintura
+        </div>
+        <div class="category" onclick="goToCategory('carpinteria.html')">
+          Carpintería
+        </div>
+        <div class="category" onclick="goToCategory('enfermeria.html')">
+          Enfermería
+        </div>
+        <div class="category" onclick="goToCategory('veterinaria.html')">
+          Veterinaria
+        </div>
+        <div
+          class="category"
+          onclick="goToCategory('reparacion-heladeras.html')"
+        >
+          Rep. Heladeras
+        </div>
+        <div
+          class="category"
+          onclick="goToCategory('reparacion-lavarropas.html')"
+        >
+          Rep. Lavarropas
+        </div>
+        <div class="category" onclick="goToCategory('aire-acondicionado.html')">
+          Aire Acondicionado
+        </div>
+        <div class="category" onclick="goToCategory('costura.html')">
+          Costura
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function goToCategory(url) {
+        window.location.href = url;
+      }
+
+      function filterCategories(value) {
+        const search = value.toLowerCase();
+        const items = document.querySelectorAll(".category");
+        items.forEach((item) => {
+          item.style.display = item.textContent.toLowerCase().includes(search)
+            ? "block"
+            : "none";
+        });
+      }
+    </script>
+  </body>
+</html>

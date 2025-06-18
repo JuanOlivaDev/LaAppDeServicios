@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Servicios APP - Carpintería</title>
+    <link rel="stylesheet" href="styles.css" />
+  
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0077cc" />
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+  </script>
+
+</head>
+  <body>
+    <header>
+      <h1>Carpintería</h1>
+      <button onclick="window.location.href='home.html'">Inicio</button>
+    </header>
+    <div class="card">
+      <div class="card-content">
+        <div class="info">
+          <h3>Marina Figueroa</h3>
+          <p><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width: 16px; vertical-align: middle" /> <a href="tel:3496000001">Tel: 3496 000001</a></p>
+          <div class="buttons">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">+ Info</button>
+            <button class="photos-btn">+ Fotos</button>
+          </div>
+          <div class="accordion">
+            <p>Tipo de servicio: Instalaciones</p>
+            <p>Horarios de atención: 7 a 15 hs</p>
+            <p>Presupuestos desde: $2000</p>
+            <p>Urgencias 24 hs: Sí</p>
+            <p>Localidades cercanas: No</p>
+          </div>
+        </div>
+        <div class="photo"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="info">
+          <h3>Paula Díaz</h3>
+          <p><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width: 16px; vertical-align: middle" /> <a href="tel:3496000002">Tel: 3496 000002</a></p>
+          <div class="buttons">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">+ Info</button>
+            <button class="photos-btn">+ Fotos</button>
+          </div>
+          <div class="accordion">
+            <p>Tipo de servicio: Instalaciones</p>
+            <p>Horarios de atención: 10 a 17 hs</p>
+            <p>Presupuestos desde: $5000</p>
+            <p>Urgencias 24 hs: No</p>
+            <p>Localidades cercanas: No</p>
+          </div>
+        </div>
+        <div class="photo"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="info">
+          <h3>Paula Díaz</h3>
+          <p><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width: 16px; vertical-align: middle" /> <a href="tel:3496000003">Tel: 3496 000003</a></p>
+          <div class="buttons">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">+ Info</button>
+            <button class="photos-btn">+ Fotos</button>
+          </div>
+          <div class="accordion">
+            <p>Tipo de servicio: Mantenimiento</p>
+            <p>Horarios de atención: 9 a 17 hs</p>
+            <p>Presupuestos desde: $2000</p>
+            <p>Urgencias 24 hs: No</p>
+            <p>Localidades cercanas: No</p>
+          </div>
+        </div>
+        <div class="photo"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="info">
+          <h3>Bruno Sánchez</h3>
+          <p><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width: 16px; vertical-align: middle" /> <a href="tel:3496000004">Tel: 3496 000004</a></p>
+          <div class="buttons">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">+ Info</button>
+            <button class="photos-btn">+ Fotos</button>
+          </div>
+          <div class="accordion">
+            <p>Tipo de servicio: Instalaciones</p>
+            <p>Horarios de atención: 7 a 16 hs</p>
+            <p>Presupuestos desde: $3500</p>
+            <p>Urgencias 24 hs: No</p>
+            <p>Localidades cercanas: No</p>
+          </div>
+        </div>
+        <div class="photo"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="info">
+          <h3>Marina Figueroa</h3>
+          <p><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width: 16px; vertical-align: middle" /> <a href="tel:3496000005">Tel: 3496 000005</a></p>
+          <div class="buttons">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">+ Info</button>
+            <button class="photos-btn">+ Fotos</button>
+          </div>
+          <div class="accordion">
+            <p>Tipo de servicio: Urgencias</p>
+            <p>Horarios de atención: 8 a 18 hs</p>
+            <p>Presupuestos desde: $3000</p>
+            <p>Urgencias 24 hs: No</p>
+            <p>Localidades cercanas: No</p>
+          </div>
+        </div>
+        <div class="photo"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="info">
+          <h3>Camila Duarte</h3>
+          <p><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width: 16px; vertical-align: middle" /> <a href="tel:3496000006">Tel: 3496 000006</a></p>
+          <div class="buttons">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">+ Info</button>
+            <button class="photos-btn">+ Fotos</button>
+          </div>
+          <div class="accordion">
+            <p>Tipo de servicio: Reparaciones</p>
+            <p>Horarios de atención: 8 a 16 hs</p>
+            <p>Presupuestos desde: $3500</p>
+            <p>Urgencias 24 hs: Sí</p>
+            <p>Localidades cercanas: Sí</p>
+          </div>
+        </div>
+        <div class="photo"></div>
+      </div>
+    </div>
+    <script>
+      function toggleAccordion(button) {
+        const accordion = button.parentElement.nextElementSibling;
+        accordion.classList.toggle("open");
+      }
+    </script>
+  </body>
+</html>

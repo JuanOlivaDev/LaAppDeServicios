@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Servicios APP - Plomería</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Plomería</h1>
+      <button onclick="window.location.href='home.html'">Inicio</button>
+    </header>
+
+    <!-- Tarjetas de prestadores de plomería -->
+    <div class="card">
+      <div class="card-content">
+        <div class="info">
+          <h3>Luis Pereyra</h3>
+          <p>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+              style="width: 16px; vertical-align: middle"
+            />
+            <a href="tel:3496001122">Tel: 3496 001122</a>
+          </p>
+          <div class="buttons">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+              + Info
+            </button>
+            <button class="photos-btn">+ Fotos</button>
+          </div>
+          <div class="accordion">
+            <p>Tipo de servicio: Reparaciones y mantenimiento</p>
+            <p>Horarios de atención: 8 a 17 hs</p>
+            <p>Presupuestos desde: $2500</p>
+            <p>Urgencias 24 hs: Sí</p>
+            <p>Localidades cercanas: No</p>
+          </div>
+        </div>
+        <div class="photo"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <div class="info">
+          <h3>Claudia Sosa</h3>
+          <p>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+              style="width: 16px; vertical-align: middle"
+            />
+            <a href="tel:3496002233">Tel: 3496 002233</a>
+          </p>
+          <div class="buttons">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+              + Info
+            </button>
+            <button class="photos-btn">+ Fotos</button>
+          </div>
+          <div class="accordion">
+            <p>Tipo de servicio: Reparaciones pequeñas</p>
+            <p>Horarios de atención: 9 a 18 hs</p>
+            <p>Presupuestos desde: $2000</p>
+            <p>Urgencias 24 hs: No</p>
+            <p>Localidades cercanas: Sí</p>
+          </div>
+        </div>
+        <div class="photo"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <div class="info">
+          <h3>José Delgado</h3>
+          <p>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+              style="width: 16px; vertical-align: middle"
+            />
+            <a href="tel:3496003344">Tel: 3496 003344</a>
+          </p>
+          <div class="buttons">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+              + Info
+            </button>
+            <button class="photos-btn">+ Fotos</button>
+          </div>
+          <div class="accordion">
+            <p>Tipo de servicio: Instalaciones completas</p>
+            <p>Horarios de atención: 7 a 15 hs</p>
+            <p>Presupuestos desde: $5000</p>
+            <p>Urgencias 24 hs: No</p>
+            <p>Localidades cercanas: No</p>
+          </div>
+        </div>
+        <div class="photo"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <div class="info">
+          <h3>Marta Gómez</h3>
+          <p>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+              style="width: 16px; vertical-align: middle"
+            />
+            <a href="tel:3496004455">Tel: 3496 004455</a>
+          </p>
+          <div class="buttons">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+              + Info
+            </button>
+            <button class="photos-btn">+ Fotos</button>
+          </div>
+          <div class="accordion">
+            <p>Tipo de servicio: Reparaciones y urgencias</p>
+            <p>Horarios de atención: 10 a 19 hs</p>
+            <p>Presupuestos desde: $2800</p>
+            <p>Urgencias 24 hs: Sí</p>
+            <p>Localidades cercanas: Sí</p>
+          </div>
+        </div>
+        <div class="photo"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <div class="info">
+          <h3>Fernando Ruiz</h3>
+          <p>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+              style="width: 16px; vertical-align: middle"
+            />
+            <a href="tel:3496005566">Tel: 3496 005566</a>
+          </p>
+          <div class="buttons">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+              + Info
+            </button>
+            <button class="photos-btn">+ Fotos</button>
+          </div>
+          <div class="accordion">
+            <p>Tipo de servicio: Obras grandes y mantenimiento</p>
+            <p>Horarios de atención: 6 a 14 hs</p>
+            <p>Presupuestos desde: $4000</p>
+            <p>Urgencias 24 hs: No</p>
+            <p>Localidades cercanas: Sí</p>
+          </div>
+        </div>
+        <div class="photo"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <div class="info">
+          <h3>Ana Torres</h3>
+          <p>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+              style="width: 16px; vertical-align: middle"
+            />
+            <a href="tel:3496006677">Tel: 3496 006677</a>
+          </p>
+          <div class="buttons">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+              + Info
+            </button>
+            <button class="photos-btn">+ Fotos</button>
+          </div>
+          <div class="accordion">
+            <p>Tipo de servicio: Emergencias y desagües</p>
+            <p>Horarios de atención: 11 a 20 hs</p>
+            <p>Presupuestos desde: $3500</p>
+            <p>Urgencias 24 hs: Sí</p>
+            <p>Localidades cercanas: No</p>
+          </div>
+        </div>
+        <div class="photo"></div>
+      </div>
+    </div>
+
+    <script>
+      function toggleAccordion(button) {
+        const accordion = button.parentElement.nextElementSibling;
+        accordion.classList.toggle("open");
+      }
+    </script>
+  </body>
+</html>
