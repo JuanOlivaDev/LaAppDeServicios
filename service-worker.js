@@ -1,7 +1,6 @@
-const cacheName = "servicios-cache-v1";
+const cacheName = "servicios-cache-v2";
 const filesToCache = [
-  "/",
-  "/home.html",
+  "/index.html",
   "/styles.css",
   "/plomeria.html",
   "/albanileria.html",
@@ -18,7 +17,7 @@ const filesToCache = [
   "/reparacion-heladeras.html",
   "/reparacion-lavarropas.html",
   "/aire-acondicionado.html",
-  "/costura.html"
+  "/costura.html",
 ];
 
 self.addEventListener("install", (event) => {
