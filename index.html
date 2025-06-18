@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Servicios APP</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="preload" href="styles.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="styles.css"></noscript>
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#0077cc" />
   <script>
-    // Redirección forzada si se abre desde una ruta mal cacheada
     const pathname = location.pathname;
     if (
       pathname.includes("plomeria.html") ||
       pathname.endsWith("/") ||
       pathname === "/LaAppDeServicios/" ||
-      pathname === "/Servicios-App/" // por si quedó rastros del repo viejo
+      pathname === "/Servicios-App/"
     ) {
       location.replace("index.html");
     }
